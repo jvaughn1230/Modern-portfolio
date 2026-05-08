@@ -1,26 +1,114 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Fonts */
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+
+  /* Background Colors */
+  --bg-primary: #020b1c;
+  --bg-secondary: #06152d;
+  --bg-section: #081f3f;
+  --bg-card: rgba(12, 32, 64, 0.65);
+
+  /* Accent Colors */
+  --accent-cyan: #22d3ee;
+  --accent-ocean: #3b82f6;
+  --accent-glow: #38bdf8;
+  --accent-soft: #67e8f9;
+
+  /* Font Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-dim: #64748b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 11, 28, 0.95) 0%,
+    rgba(2, 11, 28, 0.75) 35%,
+    rgba(2, 11, 28, 0.4) 60%,
+    rgba(2, 11, 28, 0.15) 100%
+  );
+}
+
+.section {
+  background: linear-gradient(to bottom, #020b1c, #06152d, #081f3f);
+}
+
+button {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+/* @layer base {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      Fira Sans,
+      Droid Sans,
+      Helvetica Neue,
+      sans-serif;
+    @apply bg-gradient bg-cover bg-[50%] bg-repeat h-full;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-white md:text-5xl lg:text-7xl;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  p {
+    @apply text-base font-medium;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  p,
+  pre {
+    margin: 0;
+  }
+
+  button {
+    @apply w-fit cursor-pointer rounded-lg border-0 bg-purple-951 px-6 py-4 text-lg text-white hover:bg-violet-900;
+  }
+
+  button:focus {
+    @apply outline-dotted outline-1;
+  }
+
+  p {
+    @apply m-0 text-2xl font-bold md:text-3xl;
+  }
+} */
