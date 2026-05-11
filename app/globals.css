@@ -104,7 +104,11 @@
 
   /* Navbar Links */
   .nav-link {
-    @apply font-body text-sm uppercase tracking-wider text-secondary transition duration-300 hover:text-cyan;
+    @apply font-semibold text-sm uppercase tracking-wider text-primary transition duration-300 hover:text-cyan;
+  }
+
+  .mobile-nav-link {
+    @apply border-b border-white/10 py-4 font-body text-sm font-semibold uppercase tracking-[0.22em] text-secondary transition hover:text-cyan last:border-b-0;
   }
 
   /* Project Card Titles */
