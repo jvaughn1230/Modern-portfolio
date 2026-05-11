@@ -12,15 +12,115 @@
   --bg-card: rgba(12, 32, 64, 0.65);
 
   /* Accent Colors */
-  --accent-cyan: #22d3ee;
-  --accent-ocean: #3b82f6;
-  --accent-glow: #38bdf8;
-  --accent-soft: #67e8f9;
+  --color-cyan: #22d3ee;
+  --color-ocean: #3b82f6;
+  --color-glow: #38bdf8;
+  --color-soft: #67e8f9;
 
   /* Font Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-dim: #64748b;
+  --color-primary: #f8fafc;
+  --color-secondary: #94a3b8;
+  --color-dim: #64748b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .hero-bg {
+    background-image: url('../public/hero.png');
+  }
+  /* Hero Main Name */
+  .hero-title {
+    @apply font-heading text-5xl md:text-7xl font-bold tracking-[-0.05em] text-primary;
+  }
+
+  /* Hero Subtitle */
+  .hero-subtitle {
+    @apply font-heading text-3xl md:text-4xl font-bold text-cyan;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center rounded-full 
+    px-7 py-4
+    font-heading
+    text-sm
+    font-semibold
+    tracking-wide
+     transition-all duration-300
+    hover:scale-[1.03]
+    text-primary;
+  }
+
+  .primary-button {
+    @apply bg-gradient-to-r
+    from-cyan
+    to-ocean
+    shadow-[0_0_24px_rgba(34,211,238,0.35)]
+    hover:shadow-[0_0_24px_rgba(34,211,238,0.55)]
+    hover:brightness-110
+    active:scale-[0.98];
+  }
+
+  .secondary-button {
+    @apply border border-cyan/50
+    bg-white/5
+    backdrop-blur-md
+    hover:border-cyan
+    hover:bg-cyan/10
+    hover:text-soft
+    hover:shadow-[0_0_24px_rgba(34,211,238,0.18)];
+  }
+
+  .scroll-indicator {
+    @apply absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-secondary md:flex;
+  }
+
+  .scroll-mouse {
+    @apply flex h-10 w-6 justify-center rounded-full border border-cyan/50 bg-white/5 p-1 backdrop-blur-md;
+  }
+
+  .scroll-dot {
+    @apply h-2 w-1 rounded-full bg-cyan shadow-[0_0_10px_rgba(34,211,238,0.9)] animate-bounce;
+  }
+
+  /* Section Labels (ABOUT ME, PROJECTS, etc.) */
+  .section-label {
+    @apply font-heading text-sm uppercase tracking-[0.25em] text-cyan font-semibold;
+  }
+
+  /* Main Section Titles */
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl font-bold tracking-[-0.03em] text-primary;
+  }
+
+  /* Body Paragraphs */
+  .body-text {
+    @apply font-body text-base leading-8 text-secondary;
+  }
+
+  /* Navbar Links */
+  .nav-link {
+    @apply font-body text-sm uppercase tracking-wider text-secondary transition duration-300 hover:text-cyan;
+  }
+
+  /* Project Card Titles */
+  .project-title {
+    @apply font-heading text-2xl font-semibold text-primary;
+  }
+
+  /* Project Card Description */
+  .project-description {
+    @apply font-body text-sm leading-7 text-secondary;
+  }
+
+  /* Button Text */
+  .button-text {
+    @apply font-heading text-sm font-semibold tracking-wide;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -29,9 +129,6 @@
     --foreground: #ededed;
   }
 } */
-
-body {
-}
 
 .hero {
   background: linear-gradient(
@@ -43,13 +140,13 @@ body {
   );
 }
 
-.section {
+/* .section {
   background: linear-gradient(to bottom, #020b1c, #06152d, #081f3f);
 }
 
 button {
   background: linear-gradient(to right, #06b6d4, #3b82f6);
-}
+} */
 
 /* @layer base {
   html,

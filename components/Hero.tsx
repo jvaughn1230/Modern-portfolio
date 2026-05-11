@@ -1,33 +1,59 @@
 import React from 'react';
+import Button from './Button';
+import Image from 'next/image';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 const Hero = () => {
   return (
-    <section className='mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6'>
-      <p className='mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400'>
-        Full-Stack Developer
-      </p>
+    <section id='home' className='relative min-h-screen overflow-hidden'>
+      <Image
+        src='/hero.png'
+        alt='Cinematic ocean coastline'
+        fill
+        priority
+        className='object-cover object-center'
+      />
 
-      <h1 className='max-w-4xl text-5xl font-bold tracking-tight md:text-7xl'>
-        Hi, I&apos;m Jeffrey Vaughn.
-      </h1>
+      {/* Blue Ocean Glow Affect */}
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_72%_45%,rgba(34,211,238,0.22),transparent_34%)]' />
 
-      <p className='mt-6 max-w-2xl text-lg leading-8 text-slate-300'>
-        I build modern web and mobile applications
-      </p>
+      {/* Bottom fade into next section */}
+      <div className='absolute bottom-0 left-0 h-44 w-full bg-gradient-to-b from-transparent to-bg-primary' />
 
-      <div className='mt-8 flex flex-wrap gap-4'>
-        <a
-          href='#projects'
-          className='rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300'
-        >
+      <div className='relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 sm:px-8 lg:px-10'>
+        <div className='max-w-3xl'>
+          <p className='section-label mb-4'>Full Stack Developer</p>
+
+          <h1 className='hero-title'>
+            Building modern web and mobile experiences.
+          </h1>
+
+          <p className='body-text mt-6 max-w-2xl font-bold sm:text-lg'>
+            I&apos;m Jeffrey Vaughn, a full-stack developer specializing in
+            React, Next.js, React Native, Node.js, and TypeScript. I build
+            scalable applications from frontend to backend with a focus on
+            performance, usability, and clean architecture.
+          </p>
+          <div className='mt-9 flex flex-col gap-4 sm:flex-row'>
+            <Button
+              to='projects'
+              type='primary'
+              text='View Projects'
+              icon={FaArrowRightLong}
+            />
+
+            <Button to='contact' type='secondary' text='contact me' />
+          </div>
+        </div>
+      </div>
+
+      <div className='mt-9 flex flex-col gap-4 sm:flex-row'>
+        <a href='#projects' className='hero-button-primary'>
           View Projects
         </a>
 
-        <a
-          href='#contact'
-          className='rounded-full border border-slate-700 px-6 py-3 font-semibold text-white transition hover:border-cyan-400 hover:text-cyan-400'
-        >
-          Contact Me
+        <a href='#contact' className='hero-button-secondary'>
+          Contact Me NOw
         </a>
       </div>
     </section>
